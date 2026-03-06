@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Productivity MCP Server Evaluation
+
+  These questions test the MCP server's ability to interact with
+  Notion, GitHub, and Discord APIs through the registered tools.
+
+  Prerequisites:
+  - NOTION_API_KEY configured with access to at least one database/page
+  - GITHUB_TOKEN configured with repo access
+  - DISCORD_WEBHOOK_URL configured
+
+  Instructions:
+  1. Ensure all API keys are configured
+  2. Run each question through Claude with the MCP server connected
+  3. Verify answers match expected results
+-->
+<evaluation>
+  <!-- Notion Tools -->
+  <qa_pair>
+    <question>Search Notion for any page or database. How many results are returned and what is the type of the first result?</question>
+    <answer>Varies by user - should return count and type (page or database)</answer>
+    <tool_used>notion_search</tool_used>
+    <verification>Check that response includes count and items with type field</verification>
+  </qa_pair>
+
+  <qa_pair>
+    <question>Create a new page in Notion titled "MCP Test Page" with the content "This is a test page created by the productivity MCP server." What is the URL of the created page?</question>
+    <answer>Returns a notion.so URL</answer>
+    <tool_used>notion_create_page</tool_used>
+    <verification>URL should be valid notion.so link</verification>
+  </qa_pair>
+
+  <qa_pair>
+    <question>Query a Notion database and list the first 5 items. What properties does each item have?</question>
+    <answer>Returns items with their properties</answer>
+    <tool_used>notion_query_database</tool_used>
+    <verification>Each item should have id, url, title, and properties</verification>
+  </qa_pair>
+
+  <!-- GitHub Tools -->
+  <qa_pair>
+    <question>List your GitHub repositories sorted by most recently updated. What is the name and star count of your most recently updated repo?</question>
+    <answer>Returns repo name and stars count</answer>
+    <tool_used>github_list_repos</tool_used>
+    <verification>Should return valid repo with name, stars, and updated_at</verification>
+  </qa_pair>
+
+  <qa_pair>
+    <question>Get details about a specific GitHub repository you own. What is the default branch and how many open issues does it have?</question>
+    <answer>Returns default_branch (usually main/master) and open_issues count</answer>
+    <tool_used>github_get_repo</tool_used>
+    <verification>Should return complete repo details</verification>
+  </qa_pair>
+
+  <qa_pair>
+    <question>List open issues in one of your repositories. How many open issues are there and what are their titles?</question>
+    <answer>Returns count and list of issue titles</answer>
+    <tool_used>github_list_issues</tool_used>
+    <verification>Each issue should have number, title, state, labels</verification>
+  </qa_pair>
+
+  <qa_pair>
+    <question>List open pull requests in one of your repositories. Are there any open PRs, and if so, what branches are they merging?</question>
+    <answer>Returns PR count and branch info (head -> base)</answer>
+    <tool_used>github_list_prs</tool_used>
+    <verification>PRs should show head.ref and base.ref</verification>
+  </qa_pair>
+
+  <!-- Discord Tools -->
+  <qa_pair>
+    <question>Send a test message to Discord that says "Hello from Productivity MCP Server!" What message ID is returned?</question>
+    <answer>Returns a message ID (numeric string)</answer>
+    <tool_used>discord_send_message</tool_used>
+    <verification>Message should appear in Discord channel, ID returned</verification>
+  </qa_pair>
+
+  <qa_pair>
+    <question>Send a Discord embed with title "Test Notification", description "This is a test embed", and color blue (5814783). What message ID is returned?</question>
+    <answer>Returns a message ID</answer>
+    <tool_used>discord_send_embed</tool_used>
+    <verification>Embed should appear in Discord with correct formatting</verification>
+  </qa_pair>
+
+  <qa_pair>
+    <question>Delete a Discord message using the message ID from a previous send operation. Was the deletion successful?</question>
+    <answer>Returns deletion confirmation</answer>
+    <tool_used>discord_delete_message</tool_used>
+    <verification>Message should no longer appear in Discord channel</verification>
+  </qa_pair>
+</evaluation>

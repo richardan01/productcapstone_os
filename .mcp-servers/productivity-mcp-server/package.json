@@ -1,0 +1,43 @@
+{
+  "name": "productivity-mcp-server",
+  "version": "1.0.0",
+  "description": "Unified MCP server for Notion, GitHub, and Discord integrations",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "productivity-mcp-server": "dist/index.js"
+  },
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "@notionhq/client": "^2.2.15",
+    "axios": "^1.7.9",
+    "express": "^5.2.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.10.0",
+    "rimraf": "^6.0.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  },
+  "keywords": [
+    "mcp",
+    "notion",
+    "github",
+    "discord",
+    "productivity"
+  ],
+  "author": "",
+  "license": "MIT"
+}

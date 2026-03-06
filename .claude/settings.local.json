@@ -15,7 +15,25 @@
       "Bash(dir /s \"C:\\\\Users\\\\RICHIE\\\\Documents\\\\personal_os\")",
       "Bash(where:*)",
       "Bash(dir \"C:\\\\Users\\\\RICHIE\\\\Documents\\\\personal_os\\\\.claude\\\\skills\\\\config\")",
-      "Bash(dir \"C:\\\\Users\\\\RICHIE\\\\Documents\\\\personal_os\\\\.claude\\\\commands\")"
+      "Bash(dir \"C:\\\\Users\\\\RICHIE\\\\Documents\\\\personal_os\\\\.claude\\\\commands\")",
+      "Bash(dir:*)",
+      "mcp__notion__API-post-search",
+      "mcp__notion__API-patch-block-children",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(npm install:*)",
+      "Bash(npm run build:*)",
+      "Bash(node:*)",
+      "WebFetch(domain:docs.google.com)",
+      "Bash(del:*)",
+      "mcp__notion__API-get-block-children",
+      "mcp__claude_ai_Notion__notion-search",
+      "mcp__claude_ai_Notion__notion-fetch",
+      "mcp__claude_ai_Notion__notion-update-page",
+      "Bash(powershell -Command:*)",
+      "mcp__claude_ai_Notion__notion-create-pages"
     ]
-  }
+  },
+  "enabledMcpjsonServers": [
+    "notion"
+  ]
 }

@@ -1,4 +1,4 @@
-# Personal OS for Product Management
+# Personal OS Architecture & Design
 
 ## Overview
 A comprehensive personal operating system designed to streamline day-to-day product management activities through intelligent agents and modular skills.

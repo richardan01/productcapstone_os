@@ -35,3 +35,6 @@ nul
 credentials/
 *.pem
 *.key
+
+# MCP configuration (contains API keys)
+.mcp.json
